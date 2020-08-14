@@ -30,3 +30,10 @@ pushd package/lean
 rm -rf luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
 popd
+#=================================================
+# Remove upx commands
+makefile_file="$({ find package|grep Makefile |sed "/Makefile./d"; } 2>"/dev/null")"
+for a in ${makefile_file}
+do
+	[ -n "$(grep "upx" "$a")" ] && sed -i "/upx/d" "$a"
+done

@@ -37,3 +37,4 @@ for a in ${makefile_file}
 do
 	[ -n "$(grep "upx" "$a")" ] && sed -i "/upx/d" "$a"
 done
+exit 0

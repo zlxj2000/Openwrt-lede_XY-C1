@@ -32,9 +32,11 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon luci-theme-argo
 popd
 #=================================================
 # Remove upx commands
-makefile_file="$({ find package|grep Makefile |sed "/Makefile./d"; } 2>"/dev/null")"
-for a in ${makefile_file}
-do
-	[ -n "$(grep "upx" "$a")" ] && sed -i "/upx/d" "$a"
-done
+#makefile_file="$({ find package|grep Makefile |sed "/Makefile./d"; } 2>"/dev/null")"
+#for a in ${makefile_file}
+#do
+#	[ -n "$(grep "upx" "$a")" ] && sed -i "/upx/d" "$a"
+#done
+# Remove UnblockNeteaseMusicGo upx commands
+sed -i "/upx/d" package/lean/UnblockNeteaseMusicGo/Makefile
 exit 0

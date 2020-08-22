@@ -11,7 +11,7 @@
 #
 
 # Modify default IP
-sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.50.1/g' package/base-files/files/bin/config_generate
 # 获取luci-app-serverchan
 #git clone https://github.com/tty228/luci-app-serverchan package/diy-packages/luci-app-serverchan
 # 获取luci-app-adguardhome
